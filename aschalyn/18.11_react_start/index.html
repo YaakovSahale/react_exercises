@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+  </head>
+  <body>
+    <main id="app"></main>
+
+    <script type="text/babel">
+      const domElement = document.getElementById("app");
+      const name = "yaakov";
+      const age = 50;
+      const sonsNum = 3;
+      const sonsAge = [12, 8, 3];
+      const obj = {
+        name: "lili",
+        age: 45,
+        city: "ashdod",
+      };
+
+      const MyName = () => {
+        return <h1>my name is {name}</h1>;
+      };
+
+      const SayHi = () => {
+        return (
+          <div>
+            <h1>hi</h1>
+            <MyName />
+          </div>
+        );
+      };
+
+      const BtnMsg = () => {
+        const alertBtn = () => alert(`hi`);
+        return <button onClick={alertBtn}>click me</button>;
+      };
+
+      const BtnMsg2 = () => {
+        const name = `meir asulin`;
+        const alertBtn2 = () => alert(name);
+        return <button onClick={alertBtn2}>click me again</button>;
+      };
+
+      const ImgYear = () => {
+        const thisYear = new Date().getFullYear();
+        // const myImg = document.getElementById("myImg")
+        // const changeImg = ()=> myImg.src="https://cdn.pixabay.com/photo/2018/11/19/05/53/animal-3824672__340.jpg"
+        const getYear = ()=> console.log(thisYear);
+        return (
+          <img id="myImg" src="https://cdn.pixabay.com/photo/2021/06/16/20/22/cat-6342145__340.jpg" onClick={getYear}></img>
+        );
+      };
+
+      const basicReact = () => {};
+
+      ReactDOM.render(
+        <div>
+          <BtnMsg />
+          <BtnMsg2 />
+          <br></br>
+
+          <ImgYear />
+          <SayHi />
+          <img
+            src="https://cdn.pixabay.com/photo/2018/11/19/05/53/animal-3824672__340.jpg"
+            alt=""
+          ></img>
+          <video
+            src="https://player.vimeo.com/external/182817488.sd.mp4?s=fcc2b30ab8caa1b61182b08ebab9fb979ffbd9ae&profile_id=164"
+            controls
+          ></video>
+
+          <h1>
+            my name is {name} im {age + 25} years old , i have {sonsNum} sons
+            with ages of {sonsAge[0]} ,{sonsAge[1]} ,{sonsAge[2]}
+          </h1>
+
+          <h1>
+            my name is {obj.name} ,im {obj.age} years old and lives in{" "}
+            {obj.city}
+          </h1>
+
+          <footer> &copy;</footer>
+        </div>,
+        domElement
+      );
+    </script>
+  </body>
+</html>

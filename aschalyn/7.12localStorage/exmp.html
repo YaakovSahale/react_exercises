@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //........................................set item
+
+      localStorage.setItem("lastName", "Smith!!!");
+
+      //   localStorage.lastName = "Smith!!!"
+
+      localStorage.person = JSON.stringify({
+        firstName: "avi",
+        lastName: "menora",
+        age: 55,
+      });
+
+      //........................................get item
+
+      let myPerson = JSON.parse(localStorage.getItem("person"));
+
+      //   let myPerson = JSON.parse(localStorage.person)
+
+      //..........................................to add data to the localStorage
+
+      let newPerson = JSON.parse(localStorage.getItem("person"));
+      newPerson.age = 45;
+      localStorage.setItem("person", JSON.stringify(newPerson));
+    //   console.log(myPerson);
+
+
+      //   let newPerson = JSON.parse(localStorage.person);
+      //   newPerson.age = 102;
+      //   localStorage.person = JSON.stringify(newPerson);
+
+      //............
+
+    //   localStorage.setItem("numsArray","[]")
+    let numsArray = JSON.parse(localStorage.getItem("numsArray"))
+    numsArray.push(5)
+    localStorage.setItem("numsArray",JSON.stringify(numsArray)) 
+
+    </script>
+  </body>
+</html>

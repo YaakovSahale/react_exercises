@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //class definition
+      class person {
+        //the constructor function
+        constructor(firstName, lastName, age, address) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.age = age;
+          this.address = address;
+        }
+        writePerson() {
+          console.log(this.firstName, this.lastName, this.age, this.address);
+        }
+      }
+
+      //object instantiation(יצירת מופע)
+      const p1 = new person("yak", "sali", 23, "london").writePerson()
+      const p2 = new person("sharon", "gal", 80, "kahir");
+
+      // console.log(p1);
+      // console.log(p2);
+
+      p1.writePerson()
+      // p2.writePerson();
+
+    </script>
+  </body>
+</html>

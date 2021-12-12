@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+  </head>
+  <body>
+    <main id="app"></main>
+
+    <script type="text/babel">
+      const domElement = document.getElementById("app");
+
+      function Media(props) {
+        return (
+          <div>
+            <Video videoUrl = {props.videoUrl}/>
+            <Img imgUrl = {props.imgUrl}/>
+          </div>
+        );
+      }
+
+      function Video(props){
+          return(
+              <video controls src={props.videoUrl}></video>
+          )
+      }
+
+      function Img(props){
+          return(
+              <img src={props.imgUrl} alt=""></img>
+          )
+      }
+
+      ReactDOM.render(
+        <div>
+          <Media 
+          videoUrl="https://player.vimeo.com/external/589164621.sd.mp4?s=8955bbd412bf9b74bd2f108303e4271a63b2d8a5&profile_id=164" 
+          imgUrl="https://cdn.pixabay.com/photo/2020/11/04/13/29/cereal-5712343__340.jpg" />
+        </div>,
+        domElement
+      );
+    </script>
+  </body>
+</html>
