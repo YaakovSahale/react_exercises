@@ -1,0 +1,23 @@
+* {
+  font-family: cursive;
+}
+
+.App {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: tomato;
+  padding: 18px 30px;
+}
+
+a:hover {
+  background-color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background: #000;
+}
